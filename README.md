@@ -1,5 +1,3 @@
-Here’s a sample `README.md` for a Flutter project that implements the **template counter app** using the **BLoC (Business Logic Component)** package.
-
 ---
 
 # Flutter Counter App using BLoC Pattern
