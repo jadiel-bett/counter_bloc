@@ -10,6 +10,7 @@ class CounterBlocBloc extends Bloc<CounterBlocEvent, CounterBlocState> {
   CounterBlocBloc() : super(CounterBlocInitial()) {
     on<CounterInitialEvent>(counterInitialEvent);
     on<CounterIncrementEvent>(counterIncrementEvent);
+    on<ShowSnackbarEvent>(showSnackbarEvent);
   }
 
   int val = 0;
@@ -23,5 +24,10 @@ class CounterBlocBloc extends Bloc<CounterBlocEvent, CounterBlocState> {
       CounterIncrementEvent event, Emitter<CounterBlocState> emit) {
     val = val + 1;
     emit(CounterIncrementState(value: val));
+  }
+
+  FutureOr<void> showSnackbarEvent(
+      ShowSnackbarEvent event, Emitter<CounterBlocState> emit) {
+    emit(ShowSnackbarState());
   }
 }

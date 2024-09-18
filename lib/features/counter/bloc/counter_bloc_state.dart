@@ -5,6 +5,8 @@ sealed class CounterBlocState {}
 
 final class CounterBlocInitial extends CounterBlocState {}
 
+abstract class CounterBlocActionState extends CounterBlocState {}
+
 class CounterInitialState extends CounterBlocState {}
 
 class CounterIncrementState extends CounterBlocState {
@@ -12,3 +14,5 @@ class CounterIncrementState extends CounterBlocState {
 
   CounterIncrementState({required this.value});
 }
+
+class ShowSnackbarState extends CounterBlocActionState {}
